@@ -9,7 +9,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer mt-auto py-1 bg-light">
+    <footer className="footer mt-auto pt-1">
       <Container fluid>
         <Row>
           <Col sm={12} className="text-center">
@@ -24,7 +24,7 @@ const Footer = () => {
         <Row>
           <Col sm={12} className="text-center mb-2">
             <i class="fas fa-globe mr-1"></i>
-            <a href="https://watersedgere.com/" target="blank">
+            <a href="https://watersedgere.com/" className="footer-link" target="blank">
               www.watersedgere.com
             </a>
           </Col>
@@ -47,7 +47,7 @@ const Footer = () => {
           </Col>
         </Row>
         <Row>
-          <span className="col-sm-12 text-center my-auto bg-dark text-white copyright">
+          <span className="col-sm-12 text-center my-auto text-white copyright py-1">
             Copyright&copy; 2020
           </span>
         </Row>

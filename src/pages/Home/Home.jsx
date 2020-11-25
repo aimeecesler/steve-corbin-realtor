@@ -5,6 +5,8 @@ import "./Home.css";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import mottoWhite from "../../images/SCMottoWhite.png";
+import mottoBlack from "../../images/SCMottoBlack.png";
 
 const Home = () => {
   const handleSubmit = function (e) {
@@ -17,6 +19,11 @@ const Home = () => {
       fluid
       className="flex-fill home-container vh-100 align-items-center"
     >
+      <Row>
+        <Col sm={12} className="text-center">
+          <img src={mottoWhite}  className="motto" alt="Where home is your Oasis."/>
+        </Col>
+      </Row>
       <Row className="h-100">
         <Col sm={4} className="text-center m-auto">
           <Form onSubmit={handleSubmit}>

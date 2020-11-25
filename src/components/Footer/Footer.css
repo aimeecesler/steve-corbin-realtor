@@ -1,9 +1,16 @@
+footer {
+    background-color: #d0e0e2;
+}
 .footer-logo {
     max-height: 100px;
 }
 .copyright {
     font-size: .75rem;
+    background-color: #006581;
 }
 .footer-badge {
     max-height: 50px;
+}
+.footer-link {
+    color: #006581;
 }

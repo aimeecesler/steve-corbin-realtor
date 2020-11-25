@@ -16,8 +16,6 @@ const Contact = () => {
               width="640"
               height="900"
               frameborder="0"
-              marginheight="0"
-              marginwidth="0"
             >
               Loading…
             </iframe>

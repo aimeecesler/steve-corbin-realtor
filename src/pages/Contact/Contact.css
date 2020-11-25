@@ -1,6 +1,9 @@
 .contact-link {
   color: white;
 }
+.contact-link:hover {
+    color: gainsboro;
+  }
 .contact-card-bg {
   background-color: #006581 !important;
 }
