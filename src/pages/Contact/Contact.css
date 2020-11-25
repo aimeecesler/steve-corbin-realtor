@@ -1,0 +1,11 @@
+.contact-link {
+  color: white;
+}
+.contact-card-bg {
+  background-color: #006581 !important;
+}
+.contact-bg {
+  background-image: url("../../images/beachBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

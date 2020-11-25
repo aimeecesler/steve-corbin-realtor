@@ -3,35 +3,50 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import "./Contact.css";
 
 const Contact = () => {
   return (
-    <Container>
-      <Row className="mt-5">
-        <Col sm={8}></Col>
-        <Col sm={4}>
-          <Card>
-            <Card.Body>
-              <Card.Title>Contact Me</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Card.Text>
-                Email:{" "}
-                <Card.Link href="MAILTO:stevecorbinrealtor@gmail.com">
-                  SteveCorbinRealtor@gmail.com
-                </Card.Link>
-              </Card.Text>
-              <Card.Text>
-                Phone:{" "}
-                <Card.Link href="tel:2396337255">(239) 633-7255</Card.Link>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <main className="flex-fill contact-bg">
+      <Container>
+        <Row className="mt-5">
+          <Col sm={8} className="text-center">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScEgLbeRs3tAP4DpKT_JiVmcu-mVhyw5R-vxhLsxxqPGjRdUw/viewform?embedded=true"
+              width="640"
+              height="900"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >
+              Loading…
+            </iframe>
+          </Col>
+          <Col sm={4} className="text-center">
+            <Card className="bg-info text-white contact-card-bg">
+              <Card.Body>
+                <Card.Title>Direct Contact Information</Card.Title>
+                <Card.Text>
+                  <b>Email: </b>
+                  <Card.Link
+                    className="contact-link"
+                    href="MAILTO:stevecorbinrealtor@gmail.com"
+                  >
+                    SteveCorbinRealtor@gmail.com
+                  </Card.Link>
+                </Card.Text>
+                <Card.Text>
+                  <b>Phone: </b>
+                  <Card.Link className="contact-link" href="tel:2396337255">
+                    (239) 633-7255
+                  </Card.Link>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </main>
   );
 };
 
