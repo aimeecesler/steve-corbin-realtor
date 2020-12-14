@@ -1,0 +1,9 @@
+.quote-title {
+  color: #006581;
+  font-style: italic;
+}
+.about-bg {
+  background-image: url("../../images/beachBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
