@@ -19,12 +19,14 @@ const Home = () => {
       fluid
       className="flex-fill home-container vh-100 align-items-center"
     >
-      <Row>
-        <Col sm={12} className="text-center">
+      <Row className="h-100">
+        <Col sm={12} className="m-auto pb-5">
+        <Row>
+        <Col sm={12} className="text-center mb-2">
           <img src={mottoWhite}  className="motto" alt="Where home is your Oasis."/>
         </Col>
       </Row>
-      <Row className="h-100">
+      <Row>
         <Col sm={4} className="text-center m-auto">
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formSearch">
@@ -39,6 +41,9 @@ const Home = () => {
           </Form>
         </Col>
       </Row>
+        </Col>
+      </Row>
+
     </Container>
   );
 };
