@@ -6,3 +6,11 @@
 .motto {
     max-width: 768px;
 }
+.searchBtn {
+    background-color: #006581;
+    border-color: #006581;
+}
+.searchBtn:hover {
+    background-color: #4996ac;
+    border-color: #4996ac;
+}

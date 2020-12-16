@@ -3,17 +3,12 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import "./Home.css";
 import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import mottoWhite from "../../images/SCMottoWhite.png";
-import mottoBlack from "../../images/SCMottoBlack.png";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
-  const handleSubmit = function (e) {
-    e.preventDefault();
-    console.log("SUBMIT");
-  };
-
+const history = useHistory();
   return (
     <Container
       fluid
@@ -28,17 +23,9 @@ const Home = () => {
       </Row>
       <Row>
         <Col sm={4} className="text-center m-auto">
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formSearch">
-              <Form.Control
-                type="text"
-                placeholder="Address, City, Zip, Community or MLS Number"
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
+            <Button variant="primary" className="searchBtn" size="lg" onClick={() => history.push("/search")}>
+              Search Properties
             </Button>
-          </Form>
         </Col>
       </Row>
         </Col>

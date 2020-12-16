@@ -1,9 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import watersedgeLogo from "../../images/WEbutton.png";
 import logoSC from "../../images/SteveCorbin.png";
-import logoSCMotto from "../../images/SteveCorbinMotto.png";
 import "./MyNavbar.css";
 
 const MyNavbar = () => {
@@ -16,6 +14,7 @@ const MyNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/search">Search</Nav.Link>
           <Nav.Link href="/contact">Contact</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="/current-listings">Current Listings</Nav.Link>
