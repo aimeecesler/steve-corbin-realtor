@@ -5,10 +5,10 @@ import "./Home.css";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import mottoWhite from "../../images/SCMottoWhite.png";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const Home = () => {
-const history = useHistory();
+// const history = useHistory();
   return (
     <Container
       fluid
@@ -23,7 +23,7 @@ const history = useHistory();
       </Row>
       <Row>
         <Col sm={4} className="text-center m-auto">
-            <Button variant="primary" className="searchBtn" size="lg" onClick={() => history.push("/search")}>
+            <Button variant="primary" className="searchBtn" size="lg">
               Search Properties
             </Button>
         </Col>

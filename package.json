@@ -2,7 +2,7 @@
   "name": "steve-corbin-realtor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://aimeecesler.github.io/steve-corbin-realtor",
+  "homepage": "https://aimeecesler.github.io/steve-corbin-realtor",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.1",
