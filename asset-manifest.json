@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/steve-corbin-realtor/static/css/main.d7d028af.chunk.css",
+    "main.js": "/steve-corbin-realtor/static/js/main.52410535.chunk.js",
+    "main.js.map": "/steve-corbin-realtor/static/js/main.52410535.chunk.js.map",
+    "runtime-main.js": "/steve-corbin-realtor/static/js/runtime-main.a0adcc61.js",
+    "runtime-main.js.map": "/steve-corbin-realtor/static/js/runtime-main.a0adcc61.js.map",
+    "static/js/2.ea6fb2f1.chunk.js": "/steve-corbin-realtor/static/js/2.ea6fb2f1.chunk.js",
+    "static/js/2.ea6fb2f1.chunk.js.map": "/steve-corbin-realtor/static/js/2.ea6fb2f1.chunk.js.map",
+    "index.html": "/steve-corbin-realtor/index.html",
+    "static/css/main.d7d028af.chunk.css.map": "/steve-corbin-realtor/static/css/main.d7d028af.chunk.css.map",
+    "static/js/2.ea6fb2f1.chunk.js.LICENSE.txt": "/steve-corbin-realtor/static/js/2.ea6fb2f1.chunk.js.LICENSE.txt",
+    "static/media/SCMottoWhite.04ce4163.png": "/steve-corbin-realtor/static/media/SCMottoWhite.04ce4163.png",
+    "static/media/SteveCorbin.f3909034.png": "/steve-corbin-realtor/static/media/SteveCorbin.f3909034.png",
+    "static/media/Watersedge.3e02af30.png": "/steve-corbin-realtor/static/media/Watersedge.3e02af30.png",
+    "static/media/Search.css": "/steve-corbin-realtor/static/media/beachBackground.a93a031b.jpg",
+    "static/media/fheo350-clear.3d07b985.png": "/steve-corbin-realtor/static/media/fheo350-clear.3d07b985.png",
+    "static/media/headshot.6513fe67.jpg": "/steve-corbin-realtor/static/media/headshot.6513fe67.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0adcc61.js",
+    "static/js/2.ea6fb2f1.chunk.js",
+    "static/css/main.d7d028af.chunk.css",
+    "static/js/main.52410535.chunk.js"
+  ]
+}
