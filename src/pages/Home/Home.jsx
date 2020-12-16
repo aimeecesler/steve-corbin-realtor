@@ -1,14 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import "./Home.css";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import mottoWhite from "../../images/SCMottoWhite.png";
-// import { useHistory } from "react-router-dom";
 
 const Home = () => {
-// const history = useHistory();
   return (
     <Container
       fluid
@@ -23,9 +22,11 @@ const Home = () => {
       </Row>
       <Row>
         <Col sm={4} className="text-center m-auto">
-            <Button variant="primary" className="searchBtn" size="lg">
+          <Link to="/search">
+          <Button variant="primary" className="searchBtn" size="lg">
               Search Properties
             </Button>
+          </Link>
         </Col>
       </Row>
         </Col>
