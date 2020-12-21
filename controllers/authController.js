@@ -7,14 +7,8 @@ const jwt = require("jsonwebtoken");
 // New User Sign up
 router.post("/api/signup", (req, res) => {
     const {
-      userName,
-      ageRange,
-      bio,
       email,
       password,
-      image,
-      city,
-      state
     } = req.body;
     if (!email.trim() || !password.trim()) {
       res.status(400);
@@ -23,14 +17,8 @@ router.post("/api/signup", (req, res) => {
         .hash(password, 10)
         .then((hashedPassword) => {
           db.User.create({
-            userName: userName,
-            ageRange: ageRange,
-            bio: bio,
             email: email,
             password: hashedPassword,
-            image: image,
-            city: city,
-            state: state,
           })
             .then((NewUser) => {
               const token = jwt.sign({ userId: NewUser._id }, process.env.SECRET);
