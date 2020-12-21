@@ -4,6 +4,58 @@ const db = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+// New User Sign up
+router.post("/api/signup", (req, res) => {
+    const {
+      userName,
+      ageRange,
+      bio,
+      email,
+      password,
+      image,
+      city,
+      state
+    } = req.body;
+    if (!email.trim() || !password.trim()) {
+      res.status(400);
+    } else {
+      bcrypt
+        .hash(password, 10)
+        .then((hashedPassword) => {
+          db.User.create({
+            userName: userName,
+            ageRange: ageRange,
+            bio: bio,
+            email: email,
+            password: hashedPassword,
+            image: image,
+            city: city,
+            state: state,
+          })
+            .then((NewUser) => {
+              const token = jwt.sign({ userId: NewUser._id }, process.env.SECRET);
+              res.json({
+                error: false,
+                data: token,
+                message: "Successfully signed up.",
+              });
+            })
+            .catch((err) => {
+              // console.log(err);
+              res.status(500).json({
+                error: true,
+                data: null,
+                message: "Failed to add new user.",
+              });
+            });
+        })
+        .catch((err) => {
+          // console.log(err);
+          res.status(500);
+        });
+    }
+  });
+
 // Login
 router.post("/api/login", (req, res) => {
   const { email, password } = req.body;

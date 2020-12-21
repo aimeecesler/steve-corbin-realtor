@@ -1,0 +1,13 @@
+.login-container {
+    background-image: url("../../images/beachBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.loginBtn {
+    background-color: #006581;
+    border-color: #006581;
+}
+.loginBtn:hover {
+    background-color: #4996ac;
+    border-color: #4996ac;
+}
