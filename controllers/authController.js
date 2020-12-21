@@ -29,7 +29,6 @@ router.post("/api/signup", (req, res) => {
               });
             })
             .catch((err) => {
-              console.log(err);
               res.status(500).json({
                 error: true,
                 data: null,
@@ -38,7 +37,6 @@ router.post("/api/signup", (req, res) => {
             });
         })
         .catch((err) => {
-          console.log(err);
           res.status(500);
         });
     }
