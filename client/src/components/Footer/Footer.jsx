@@ -23,7 +23,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Col sm={12} className="text-center mb-2">
-            <i class="fas fa-globe mr-1"></i>
+            <i className="fas fa-globe mr-1"></i>
             <a href="https://watersedgere.com/" className="footer-link" target="blank">
               www.watersedgere.com
             </a>

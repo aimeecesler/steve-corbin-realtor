@@ -10,7 +10,6 @@ const PropertySchema = new Schema({
   streetAddress2: {
     type: String,
     trim: true,
-    required: "String is Required",
   },
   city: {
     type: String,

@@ -103,7 +103,7 @@ router.delete("/:id", (req, res) => {
 });
 
 // EDIT SELECTED PROPERTY
-router.put("/", (req, res) => {
+router.put("/:id", (req, res) => {
     if (!req.headers.authorization) {
       return res.status(401).json({
         error: true,
@@ -119,9 +119,10 @@ router.put("/", (req, res) => {
           message: "Invalid token.",
         });
       } else {
-        db.Property.findByIdAndUpdate(req.body._id, req.body)
+        db.Property.findByIdAndUpdate(req.params.id, req.body)
           .then((property) => {
             res.json(property);
+            console.log(res);
           })
           .catch((err) => {
             res.status(500).json({

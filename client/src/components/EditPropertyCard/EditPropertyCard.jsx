@@ -5,13 +5,17 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import EditModal from "../../components/EditModal/EditModal";
 
-const EditPropertyCard = ({ handleEditShow, property, loadProperties }) => {
-
+const EditPropertyCard = ({ property, loadProperties }) => {
   const [deleteShow, setDeleteShow] = useState(false);
+  const [editShow, setEditShow] = useState(false);
 
   const handleDeleteClose = () => setDeleteShow(false);
   const handleDeleteShow = () => setDeleteShow(true);
+
+  const handleEditClose = () => setEditShow(false);
+  const handleEditShow = () => setEditShow(true);
 
   return (
     <Card className="p-3 mb-3">
@@ -49,12 +53,27 @@ const EditPropertyCard = ({ handleEditShow, property, loadProperties }) => {
           <Button className="mb-2 editBtn" onClick={handleEditShow}>
             Edit Property
           </Button>
-          <Button variant="danger" className="mt-2 deleteBtn" onClick={handleDeleteShow}>
+          <Button
+            variant="danger"
+            className="mt-2 deleteBtn"
+            onClick={handleDeleteShow}
+          >
             Delete Property
           </Button>
         </Col>
       </Row>
-      <DeleteModal id={property._id} loadProperties={loadProperties} show={deleteShow} handleClose={handleDeleteClose} />
+      <DeleteModal
+        id={property._id}
+        loadProperties={loadProperties}
+        show={deleteShow}
+        handleClose={handleDeleteClose}
+      />
+      <EditModal
+        show={editShow}
+        handleClose={handleEditClose}
+        loadProperties={loadProperties}
+        property={property}
+      />
     </Card>
   );
 };

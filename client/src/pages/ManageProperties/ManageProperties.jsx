@@ -5,18 +5,13 @@ import Container from "react-bootstrap/Container";
 import EditPropertyCard from "../../components/EditPropertyCard/EditPropertyCard";
 import "./ManageProperties.css";
 import Button from "react-bootstrap/Button";
-import EditModal from "../../components/EditModal/EditModal";
 import NewModal from "../../components/NewModal/NewModal";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const ManageProperties = () => {
-  const [editShow, setEditShow] = useState(false);
   const [newShow, setNewShow] = useState(false);
   const [properties, setProperties] = useState([]);
-
-  const handleEditClose = () => setEditShow(false);
-  const handleEditShow = () => setEditShow(true);
 
   const handleNewClose = () => setNewShow(false);
   const handleNewShow = () => setNewShow(true);
@@ -51,16 +46,15 @@ const ManageProperties = () => {
       <Row className="my-5">
         <Col sm={2}></Col>
         <Col sm={8}>
-          {properties.map((property) => (
+          {properties.map((property, index) => (
             <EditPropertyCard
-              handleEditShow={handleEditShow}
+              key={index}
               property={property}
               loadProperties={loadProperties}
             />
           ))}
         </Col>
       </Row>
-      <EditModal show={editShow} handleClose={handleEditClose} />
       <NewModal
         show={newShow}
         handleClose={handleNewClose}
