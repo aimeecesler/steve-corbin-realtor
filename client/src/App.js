@@ -13,8 +13,14 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ManageProperties from "./pages/ManageProperties/ManageProperties";
 import Login from "./pages/Login/Login";
 import NewUser from "./pages/NewUser/NewUser";
+import AlertContext from "./context/AlertContext";
 
 function App() {
+  const [alert, setAlert] = useState({
+    message: "",
+    type: "",
+  });
+
   const [jwt, setJwt] = useState("");
 
   useEffect(() => {
@@ -22,24 +28,35 @@ function App() {
       setAxiosDefaults(jwt);
     }
   }, [jwt]);
+  
   return (
     <Router>
-      <AuthContext.Provider value={{ jwt, setJwt }}>
-        <div className="d-flex flex-column min-vh-100">
-          <MyNavbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/current-listings" component={CurrentListings} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/new-user" component={NewUser} />
-            <ProtectedRoute exact path="/manage-properties" component={ManageProperties} />
-          </Switch>
-          <Footer />
-        </div>
-      </AuthContext.Provider>
+      <AlertContext.Provider value={{ ...alert, setAlert: setAlert }}>
+        <AuthContext.Provider value={{ jwt, setJwt }}>
+          <div className="d-flex flex-column min-vh-100">
+            <MyNavbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+              <Route
+                exact
+                path="/current-listings"
+                component={CurrentListings}
+              />
+              <Route exact path="/search" component={Search} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/new-user" component={NewUser} />
+              <ProtectedRoute
+                exact
+                path="/manage-properties"
+                component={ManageProperties}
+              />
+            </Switch>
+            <Footer />
+          </div>
+        </AuthContext.Provider>
+      </AlertContext.Provider>
     </Router>
   );
 }

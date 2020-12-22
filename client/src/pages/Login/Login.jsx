@@ -6,7 +6,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
+import AlertContext from "../../context/AlertContext";
 import { useHistory } from "react-router-dom";
+import Alert from "../../components/Alert/Alert";
 import "./Login.css";
 
 const Login = () => {
@@ -16,6 +18,7 @@ const Login = () => {
   });
 
   const { setJwt } = useContext(AuthContext);
+  const { setAlert } = useContext(AlertContext);
   const history = useHistory();
 
   const loginUser = function (e) {
@@ -28,10 +31,10 @@ const Login = () => {
       })
       .catch((err) => {
         console.log(err);
-        // setAlert({
-        //   message: "Login failed. Please try again.",
-        //   type: "danger",
-        // });
+        setAlert({
+          message: "Login failed. Please try again.",
+          type: "danger",
+        });
       });
   };
   return (
@@ -39,10 +42,11 @@ const Login = () => {
       fluid
       className="flex-fill login-container vh-100 align-items-center"
     >
-      <Row>
+      <Row className="mt-5" >
         <Col sm={4}></Col>
         <Col sm={4}>
-          <Form className="mt-5" onSubmit={loginUser}>
+        <Alert />
+          <Form onSubmit={loginUser}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control

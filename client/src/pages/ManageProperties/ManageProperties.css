@@ -1,0 +1,25 @@
+.manage-container {
+  background-image: url("../../images/beachBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.editBtn {
+    background-color: #006581;
+    border-color: #006581;
+    width: 100%;
+}
+.editBtn:hover {
+    background-color: #4996ac;
+    border-color: #4996ac;
+}
+.deleteBtn {
+  width: 100%;
+}
+.newBtn {
+  background-color: #006581;
+  border-color: #006581;
+}
+.newBtn:hover {
+  background-color: #4996ac;
+  border-color: #4996ac;
+}

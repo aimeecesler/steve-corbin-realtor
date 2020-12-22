@@ -1,33 +1,20 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import PropertyCard from "../../components/PropertyCard/PropertyCard";
+import "./CurrentListings.css";
 
 const CurrentListings = () => {
   return (
-    <Container>
-      <Row>
+    <Container
+      fluid
+      className="flex-fill listings-container vh-100 align-items-center"
+    >
+      <Row className="mt-5">
         <Col sm={2}></Col>
         <Col sm={8}>
-          <Card className="p-3">
-            <Row>
-              <Col sm={3}>
-                <Card.Img
-                  alt="cover photo"
-                  src="https://via.placeholder.com/250x250"
-                />
-              </Col>
-              <Col sm={9}>
-                <Card.Body>
-                  <Card.Title>Home Address</Card.Title>
-                  <Card.Text>
-                    Home details
-                  </Card.Text>
-                </Card.Body>
-              </Col>
-            </Row>
-          </Card>
+          <PropertyCard />
         </Col>
       </Row>
     </Container>

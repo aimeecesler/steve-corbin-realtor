@@ -6,16 +6,19 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
+import Alert from "../../components/Alert/Alert";
+import AlertContext from "../../context/AlertContext";
 import axios from "axios";
 
 const NewUser = () => {
-  const history = useHistory();
-
   const [newUser, setNewUser] = useState({
     email: "",
     password: "",
   });
+
   const { setJwt } = useContext(AuthContext);
+  const { setAlert } = useContext(AlertContext);
+  const history = useHistory();
 
   const createNewUser = function (e) {
     e.preventDefault();
@@ -28,10 +31,10 @@ const NewUser = () => {
       })
       .catch((err) => {
         console.log(err);
-        // setAlert({
-        //   message: "Account creation failed. Please try again.",
-        //   type: "danger",
-        // });
+        setAlert({
+          message: "Account creation failed. Please try again.",
+          type: "danger",
+        });
       });
   };
 
@@ -40,10 +43,11 @@ const NewUser = () => {
       fluid
       className="flex-fill login-container vh-100 align-items-center"
     >
-      <Row>
+      <Row className="mt-5">
         <Col sm={4}></Col>
         <Col sm={4}>
-          <Form className="mt-5" onSubmit={createNewUser}>
+          <Alert />
+          <Form onSubmit={createNewUser}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control

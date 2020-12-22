@@ -42,7 +42,7 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-app.use("/current-listings", PropertyController);
+app.use("/api/properties", PropertyController);
 app.use(AuthController);
 
 app.get("*", (req, res) => {

@@ -2,7 +2,27 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PropertySchema = new Schema({
-  address: {
+  streetAddress: {
+    type: String,
+    trim: true,
+    required: "String is Required",
+  },
+  streetAddress2: {
+    type: String,
+    trim: true,
+    required: "String is Required",
+  },
+  city: {
+    type: String,
+    trim: true,
+    required: "String is Required",
+  },
+  state: {
+    type: String,
+    trim: true,
+    required: "String is Required",
+  },
+  zipCode: {
     type: String,
     trim: true,
     required: "String is Required",
@@ -19,8 +39,14 @@ const PropertySchema = new Schema({
     default: "For Sale",
   },
   yearBuilt: {
-    type: Number,
-    required: true,
+    type: String,
+    trim: true,
+    required: "String is Required",
+  },
+  price: {
+    type: String,
+    trim: true,
+    required: "String is Required",
   },
   link: {
     type: String,
@@ -28,12 +54,14 @@ const PropertySchema = new Schema({
     required: "String is Required",
   },
   beds: {
-    type: Number,
-    required: true,
+    type: String,
+    trim: true,
+    required: "String is Required",
   },
   baths: {
-    type: Number,
-    required: true,
+    type: String,
+    trim: true,
+    required: "String is Required",
   },
 });
 
