@@ -5,22 +5,6 @@ const db = require("../models");
 
 // GET ALL PROPERTIES
 router.get("/", (req, res) => {
-  if (!req.headers.authorization) {
-    return res.status(401).json({
-      error: true,
-      data: null,
-      message: "Unauthorized",
-    });
-  }
-  jwt.verify(req.headers.authorization, process.env.SECRET, (err, decoded) => {
-    if (err) {
-      // console.log(err);
-      return res.status(401).json({
-        error: true,
-        data: null,
-        message: "Invalid token.",
-      });
-    } else {
       db.Property.find({})
         .then((properties) => {
           res.json(properties);
@@ -32,8 +16,6 @@ router.get("/", (req, res) => {
             message: "Failed to retrieve all Properties",
           });
         });
-    }
-  });
 });
 
 // CREATE A NEW PROPERTY LISTING
