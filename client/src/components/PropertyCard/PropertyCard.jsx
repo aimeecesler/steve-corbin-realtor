@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 
-const PropertyCard = ({property}) => {
+const PropertyCard = ({ property }) => {
   return (
     <Card className="p-3 mb-3">
       <Row className="h-100">
@@ -16,7 +16,15 @@ const PropertyCard = ({property}) => {
         <Col sm={9} className="my-auto">
           <Card.Body>
             <Card.Title>
-              {property.streetAddress}{property.streetAddress2 ? <>{", "}{property.streetAddress2}</> : ""}
+              {property.streetAddress}
+              {property.streetAddress2 ? (
+                <>
+                  {", "}
+                  {property.streetAddress2}
+                </>
+              ) : (
+                ""
+              )}
               <br />
               {property.city}, {property.state} {property.zipCode}
             </Card.Title>

@@ -29,7 +29,15 @@ const EditPropertyCard = ({ property, loadProperties }) => {
         <Col sm={6} className="my-auto">
           <Card.Body>
             <Card.Title>
-              {property.streetAddress}, {property.streetAddress2}
+              {property.streetAddress}
+              {property.streetAddress2 ? (
+                <>
+                  {", "}
+                  {property.streetAddress2}
+                </>
+              ) : (
+                ""
+              )}
               <br />
               {property.city}, {property.state} {property.zipCode}
             </Card.Title>
