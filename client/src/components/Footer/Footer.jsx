@@ -32,11 +32,11 @@ const Footer = () => {
         <Row>
           <Col sm={12} className="text-center">
             <h6>
-              <i className="fas fa-map-marker-alt mr-1"></i>20041 S. Tamiami Trail
+              <i className="fas fa-map-marker-alt mr-1"></i>9900 Coconut Road
               <br />
-              Unit #6
+              Suite #339
               <br />
-              Estero, FL 33928
+              Estero, FL 34135
             </h6>
           </Col>
         </Row>

@@ -3,14 +3,18 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import logoSC from "../../images/SteveCorbin.png";
+import WEbutton from "../../images/WEbutton.png";
 import "./MyNavbar.css";
 
 const MyNavbar = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Link className="avbar-brand" to="/">
+      <Link className="navbar-brand" to="/">
         <img src={logoSC} alt="logo" className="navbar-logo" />
       </Link>
+      <a className="navbar-brand" href="https://watersedgere.com/" target="_blank" rel="noreferrer">
+        <img src={WEbutton} alt="logo" className="navbar-logo-we" />
+      </a>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">

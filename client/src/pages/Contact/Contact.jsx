@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import facebook from "../../images/fbicon.png";
 import "./Contact.css";
 
 const Contact = () => {
@@ -38,6 +39,11 @@ const Contact = () => {
                   <b>Phone: </b>
                   <Card.Link className="contact-link" href="tel:2396337255">
                     (239) 633-7255
+                  </Card.Link>
+                </Card.Text>
+                <Card.Text>
+                  <Card.Link href="https://www.facebook.com/stevecorbinre" target="_blank" rel="noreferrer">
+                    <img src={facebook} alt="facebook icon link" className="facebook-link"></img>
                   </Card.Link>
                 </Card.Text>
               </Card.Body>

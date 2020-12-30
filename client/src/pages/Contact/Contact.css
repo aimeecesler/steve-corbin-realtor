@@ -12,3 +12,6 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.facebook-link {
+  max-height: 50px;
+}
