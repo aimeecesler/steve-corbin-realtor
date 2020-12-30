@@ -62,6 +62,10 @@ const PropertySchema = new Schema({
     trim: true,
     required: "String is Required",
   },
+  image: {
+    type: String,
+    trim: true,
+  }
 });
 
 const Property = mongoose.model("Property", PropertySchema);

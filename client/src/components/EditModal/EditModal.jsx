@@ -17,6 +17,7 @@ const EditModal = ({ show, handleClose, property, loadProperties }) => {
     link: property.link,
     beds: property.beds,
     baths: property.baths,
+    image: property.image,
   });
 
   const handleUpdate = (e) => {
@@ -30,7 +31,7 @@ const EditModal = ({ show, handleClose, property, loadProperties }) => {
       })
       .catch((err) => {
         console.log(err);
-        alert("ERROR");
+        alert(" UPDATE ERROR");
       });
   };
   return (
@@ -269,7 +270,7 @@ const EditModal = ({ show, handleClose, property, loadProperties }) => {
             Cancel
           </Button>
           <Button variant="primary" type="submit">
-            Save New Property
+            Update Property
           </Button>
         </Modal.Footer>
       </Form>

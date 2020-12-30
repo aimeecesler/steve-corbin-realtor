@@ -6,10 +6,12 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import EditModal from "../../components/EditModal/EditModal";
+import ImageModal from "../ImageModal/ImageModal";
 
 const EditPropertyCard = ({ property, loadProperties }) => {
   const [deleteShow, setDeleteShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
+  const [imageShow, setImageShow] = useState(false);
 
   const handleDeleteClose = () => setDeleteShow(false);
   const handleDeleteShow = () => setDeleteShow(true);
@@ -17,14 +19,19 @@ const EditPropertyCard = ({ property, loadProperties }) => {
   const handleEditClose = () => setEditShow(false);
   const handleEditShow = () => setEditShow(true);
 
+  const handleImageClose = () => setImageShow(false);
+  const handleImageShow = () => setImageShow(true);
+
   return (
     <Card className="p-3 mb-3">
       <Row className="h-100">
         <Col sm={3} className="my-auto">
           <Card.Img
             alt="cover photo"
-            src="https://via.placeholder.com/250x250"
+            src={property.image ? property.image : "https://via.placeholder.com/250x250"}
+            onClick={handleImageShow}
           />
+          <Card.Text className="text-center">Click on Image to Change</Card.Text>
         </Col>
         <Col sm={6} className="my-auto">
           <Card.Body>
@@ -81,6 +88,12 @@ const EditPropertyCard = ({ property, loadProperties }) => {
         handleClose={handleEditClose}
         loadProperties={loadProperties}
         property={property}
+      />
+      <ImageModal
+      show={imageShow}
+      handleClose={handleImageClose}
+      loadProperties={loadProperties}
+      property={property}
       />
     </Card>
   );

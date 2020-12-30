@@ -23,11 +23,11 @@ function App() {
 
   const [jwt, setJwt] = useState("");
 
-  useEffect(() => {
-    if (jwt) {
-      setAxiosDefaults(jwt);
-    }
-  }, [jwt]);
+  // useEffect(() => {
+  //   if (jwt) {
+  //     setAxiosDefaults(jwt);
+  //   }
+  // }, [jwt]);
   
   return (
     <Router>
