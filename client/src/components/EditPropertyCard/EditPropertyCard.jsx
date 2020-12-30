@@ -7,6 +7,7 @@ import { useState } from "react";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import EditModal from "../../components/EditModal/EditModal";
 import ImageModal from "../ImageModal/ImageModal";
+import placeholder from "../../images/placeholder.jpg";
 
 const EditPropertyCard = ({ property, loadProperties }) => {
   const [deleteShow, setDeleteShow] = useState(false);
@@ -28,7 +29,7 @@ const EditPropertyCard = ({ property, loadProperties }) => {
         <Col sm={3} className="my-auto">
           <Card.Img
             alt="cover photo"
-            src={property.image ? property.image : "https://via.placeholder.com/250x250"}
+            src={property.image ? property.image : placeholder}
             onClick={handleImageShow}
           />
           <Card.Text className="text-center">Click on Image to Change</Card.Text>

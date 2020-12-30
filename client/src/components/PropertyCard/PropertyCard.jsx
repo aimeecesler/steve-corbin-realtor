@@ -2,6 +2,8 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
+import placeholder from "../../images/placeholder.jpg";
+
 
 const PropertyCard = ({ property }) => {
   return (
@@ -10,7 +12,7 @@ const PropertyCard = ({ property }) => {
         <Col sm={3} className="my-auto">
           <Card.Img
             alt="cover photo"
-            src="https://via.placeholder.com/250x250"
+            src={property.image ? property.image : placeholder}
           />
         </Col>
         <Col sm={9} className="my-auto">

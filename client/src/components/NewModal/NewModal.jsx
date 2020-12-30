@@ -17,27 +17,85 @@ const NewModalBody = ({ show, handleClose, loadProperties }) => {
     link: "",
     beds: "",
     baths: "",
+    price: "",
+    image: "",
   });
-  const handleSave = (e) => {
-    e.preventDefault();
-    handleClose();
+  const [uploadedImage, setUploadedImage] = useState({
+    file: "",
+    url: "https://api.cloudinary.com/v1_1/du9cxdf3n/image/upload",
+    api_key: "319232951573166",
+    upload_preset: "gbwrh3w8",
+    value: "",
+  });
+
+  const handleSave = (url) => {
+    setNewProperty({ ...newProperty, image: url });
     axios
-      .post("/api/properties", newProperty)
+      .post("/api/properties", { ...newProperty, image: url })
       .then((res) => {
         loadProperties();
+        handleClose();
+        setNewProperty({
+          streetAddress: "",
+          streetAddress2: "",
+          city: "",
+          state: "",
+          zipCode: "",
+          description: "",
+          status: "",
+          yearBuilt: "",
+          link: "",
+          beds: "",
+          baths: "",
+          price: "",
+          image: "",
+        });
       })
       .catch((err) => {
         console.log(err);
         alert("ERROR");
       });
   };
+
+  const uploadImage = async (e) => {
+    e.preventDefault();
+    if(uploadedImage.file !== "") {
+      const formData = new FormData();
+      formData.append("file", uploadedImage.file);
+      formData.append("upload_preset", uploadedImage.upload_preset);
+      try {
+        const res = await axios.post(uploadedImage.url, formData);
+        setUploadedImage({ ...uploadedImage, file: "", value: "" });
+        handleSave(res.data.secure_url);
+      } catch (err) {
+        console.log(err);
+        alert("IMAGE UPLOAD ERROR");
+      }
+    } else {
+      handleSave("");
+    }
+  };
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>New Property</Modal.Title>
       </Modal.Header>
-      <Form onSubmit={handleSave}>
+      <Form onSubmit={uploadImage}>
         <Modal.Body>
+          <Form.Group>
+            <Form.File
+              id="image"
+              label="Upload Cover Image"
+              value={uploadedImage.value}
+              onChange={(e) =>
+                setUploadedImage({
+                  ...uploadedImage,
+                  file: e.currentTarget.files[0],
+                  value: e.currentTarget.value,
+                })
+              }
+            />
+          </Form.Group>
           <Form.Group controlId="streetAddress">
             <Form.Label>Street Address</Form.Label>
             <Form.Control
