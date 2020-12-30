@@ -9,20 +9,17 @@ import "./MyNavbar.css";
 const MyNavbar = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <span>
         <Link className="navbar-brand" to="/">
           <img src={logoSC} alt="logo" className="navbar-logo" />
         </Link>
         <a
-          className="navbar-brand"
+          className="navbar-brand mr-auto"
           href="https://watersedgere.com/"
           target="_blank"
           rel="noreferrer"
         >
           <img src={WEbutton} alt="logo" className="navbar-logo-we" />
         </a>
-      </span>
-
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="hamburger"/>
       <Navbar.Collapse id="basic-navbar-nav" className="text-right">
         <Nav className="ml-auto">
