@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import AuthContext from "../../context/AuthContext";
 
 const DeleteModalBody = ({ show, handleClose, id, loadProperties }) => {
+  const { jwt } = useContext(AuthContext);
+
   const handleDelete = () => {
     handleClose();
     axios
-      .delete(`/api/properties/${id}`)
+      .delete(`/api/properties/${id}/${jwt}`)
       .then((res) => {
         loadProperties();
       })

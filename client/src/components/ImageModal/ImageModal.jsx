@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import AuthContext from "../../context/AuthContext";
 
 const ImageModal = ({ show, handleClose, property, loadProperties }) => {
+  const { jwt } = useContext(AuthContext);
+
   const [updatedProperty, setUpdatedProperty] = useState({
     streetAddress: property.streetAddress,
     streetAddress2: property.streetAddress2,
@@ -39,7 +42,7 @@ const ImageModal = ({ show, handleClose, property, loadProperties }) => {
       setUpdatedProperty({ ...updatedProperty, image: res.data.secure_url });
       setUploadedImage({...uploadedImage, file: "", value: ""});
       axios
-      .put(`/api/properties/${property._id}`, {...property, image: res.data.secure_url})
+      .put(`/api/properties/${property._id}`, {updatedProperty: {...property, image: res.data.secure_url}, auth: jwt})
       .then((res) => {
         loadProperties();
         console.log(res);

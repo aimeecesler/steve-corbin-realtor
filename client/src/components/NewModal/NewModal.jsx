@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import AuthContext from "../../context/AuthContext";
 
 const NewModalBody = ({ show, handleClose, loadProperties }) => {
+
+  const { jwt } = useContext(AuthContext);
+  
   const [newProperty, setNewProperty] = useState({
     streetAddress: "",
     streetAddress2: "",
@@ -31,7 +35,7 @@ const NewModalBody = ({ show, handleClose, loadProperties }) => {
   const handleSave = (url) => {
     setNewProperty({ ...newProperty, image: url });
     axios
-      .post("/api/properties", { ...newProperty, image: url })
+      .post("/api/properties", {newProperty:{ ...newProperty, image: url }, auth: jwt})
       .then((res) => {
         loadProperties();
         handleClose();

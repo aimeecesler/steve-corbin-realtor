@@ -6,13 +6,13 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import CurrentListings from "./pages/CurrentListings/CurrentListings";
 import Search from "./pages/Search/Search";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AuthContext from "./context/AuthContext";
-import { setAxiosDefaults } from "./utils/axiosDefaults";
+// import { setAxiosDefaults } from "./utils/axiosDefaults";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ManageProperties from "./pages/ManageProperties/ManageProperties";
 import Login from "./pages/Login/Login";
-import NewUser from "./pages/NewUser/NewUser";
+// import NewUser from "./pages/NewUser/NewUser";
 import AlertContext from "./context/AlertContext";
 
 function App() {
@@ -46,12 +46,13 @@ function App() {
               />
               <Route exact path="/search" component={Search} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/new-user" component={NewUser} />
+              {/* <Route exact path="/new-user" component={NewUser} /> */}
               <ProtectedRoute
                 exact
                 path="/manage-properties"
                 component={ManageProperties}
               />
+              <Route path="/" component={Home} />
             </Switch>
             <Footer />
           </div>
