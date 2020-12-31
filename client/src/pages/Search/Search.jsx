@@ -8,11 +8,12 @@ const Search = () => {
   return (
     <Container fluid className="search-bg">
       <Row className="my-5">
-        <Col>
+        <Col lg={2}></Col>
+        <Col lg={8}>
           <div
             id="zillow-large-search-box-widget-container"
             style={{
-              width: "432px",
+              width: "100%",
               overflow: "hidden",
               backgroundColor: "#e7f1fd",
               color: "#555",
@@ -57,9 +58,9 @@ const Search = () => {
               </a>
             </div>
             <iframe
-              scrolling="no"
+              scrolling="yes"
               src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=Fort+Myers+FL&shvi=yes"
-              width="430"
+              width="100%"
               frameborder="0"
               height="400"
               title="zillow"
