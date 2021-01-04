@@ -14,16 +14,16 @@ const Contact = () => {
           <Col sm={8} className="text-center">
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLScEgLbeRs3tAP4DpKT_JiVmcu-mVhyw5R-vxhLsxxqPGjRdUw/viewform?embedded=true"
-              width="640"
+              width="100%"
               height="900"
-              frameborder="0"
+              frameBorder="0"
               title="googleForm"
             >
               Loading…
             </iframe>
           </Col>
           <Col sm={4} className="text-center">
-            <Card className="bg-info text-white contact-card-bg">
+            <Card className="bg-info text-white contact-card-bg mb-5">
               <Card.Body>
                 <Card.Title>Direct Contact Information</Card.Title>
                 <Card.Text>
